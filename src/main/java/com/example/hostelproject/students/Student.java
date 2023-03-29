@@ -12,17 +12,17 @@ import javax.persistence.*;
 
 public class Student {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "studentID", updatable = false)
   Long studentID;
-  @Column(length = 50, updatable = true)
-  String firstName;
-  @Column(length = 50, updatable = true)
-  String lastName;
-  @Column(length = 50, updatable = true, nullable = true)
+  @Column(length = 50)
+  private String firstName;
+  @Column(length = 50)
+  private String lastName;
+  private @Column(length = 50)
   String middleName;
-  @Column(length = 150, updatable = true)
-  String programmeOfStudy;
-  @Column(length = 50, updatable = true)
-  String email;
+  @Column(length = 150)
+  private String programmeOfStudy;
+  @Column(length = 50)
+  private String email;
 }

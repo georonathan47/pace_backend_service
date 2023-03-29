@@ -19,10 +19,6 @@ public class StudentService {
     return repository.findStudentByStudentID(id);
   }
 
-  public Student findByEmail(String email) {
-    return repository.findByEmail(email);
-  }
-
   public List<Student> findByFirstName(String name) {
     return repository.findByFirstName(name);
   }
