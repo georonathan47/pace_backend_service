@@ -43,6 +43,7 @@ public class RoomService {
     if (!exists) {
       throw new IllegalStateException("Rooms with ID: " + id + " does not exist!");
     }
+    System.out.print("Room Deleted!");
     repository.deleteById(id);
   }
 }
