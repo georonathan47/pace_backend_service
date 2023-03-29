@@ -2,23 +2,27 @@ package com.example.hostelproject.students;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Builder
 @Entity(name="Students")
-@Table
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 
 public class Student {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  String studentId;
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "studentID", updatable = false)
+  Long studentID;
+  @Column(length = 50, updatable = true)
   String firstName;
+  @Column(length = 50, updatable = true)
   String lastName;
+  @Column(length = 50, updatable = true, nullable = true)
+  String middleName;
+  @Column(length = 150, updatable = true)
   String programmeOfStudy;
-
-
+  @Column(length = 50, updatable = true)
+  String email;
 }
